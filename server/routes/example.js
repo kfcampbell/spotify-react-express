@@ -2,9 +2,14 @@ var express = require('express');
 var router = express.Router();
 
 /* GET example image */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   const image = 'https://3.bp.blogspot.com/-4EuWih02LBs/VfMHOS7fGBI/AAAAAAAAAAQ/wszG6GmVP_Q/s1600/roast-beef-achewood.jpg';
-  res.json({ imageUrl: image });
+  res.json({
+      id: 0,
+      imageUrl: image,
+      someProperty: 'nah'
+    }
+  );
 });
 
 module.exports = router;
