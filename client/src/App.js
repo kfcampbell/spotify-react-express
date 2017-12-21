@@ -9,8 +9,11 @@ class App extends Component {
 
   componentDidMount() {
     fetch('/example')
-      .then(res => res.json())
-      .then(imageUrl => this.setState({ imageUrl }));
+      .then(response => response.json())
+      .then(json => {
+        console.log('json: ', json);
+        this.setState({ imageUrl: json.imageUrl });
+      })
   }
 
   render() {
