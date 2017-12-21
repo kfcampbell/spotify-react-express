@@ -19,7 +19,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        
+        <div className="container">
+          <div className="login-container hidden" id="js-login-container">
+            <button className="btn btn--login" id="js-btn-login">Login with Sportify</button>
+          </div>
+          <div className="hidden" id="js-main-container"></div>
+        </div>
       </div>
     );
   }
