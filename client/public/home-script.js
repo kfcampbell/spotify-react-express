@@ -1,4 +1,4 @@
-var mainContainer = document.getElementById('js-main-container'),
+/*var mainContainer = document.getElementById('js-main-container'),
     loginContainer = document.getElementById('js-login-container'),
     loginButton = document.getElementById('js-btn-login'),
     background = document.getElementById('js-background');
@@ -53,4 +53,4 @@ spotifyPlayer.init();
 
 function toggleMusic() {
   spotifyPlayer.toggleMusic(isPlaying);
-}
+}*/

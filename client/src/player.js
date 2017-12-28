@@ -1,4 +1,4 @@
-class SpotifyPlayer {
+export class SpotifyPlayer {
     constructor(options = {}) {
         this.options = options;
         this.listeners = {};
@@ -98,7 +98,7 @@ class SpotifyPlayer {
 
     _onNewAccessToken() {
         if (this.accessToken === '') {
-            console.log('Got empty access token, log out');
+            console.log('Got empty access token; logging out');
             this.dispatch('login', null);
             this.logout();
         } else {
@@ -134,7 +134,8 @@ class SpotifyPlayer {
         this.dispatch('login', null);
     }
 
-    login() {
+    // need to modify this to take in screen constraints as a parameter
+    login(screen) {
         return new Promise((resolve, reject) => {
             const getLoginURL = scopes => {
                 return `${this.exchangeHost}/login?scope=${encodeURIComponent(scopes.join(' '))}`;
@@ -142,7 +143,8 @@ class SpotifyPlayer {
 
             const url = getLoginURL(['user-read-playback-state']);
 
-            const width = 450, height = 730, left = screen.width / 2 - width / 2, top = screen.height / 2 - height / 2;
+            //const width = 450, height = 730, left = screen.width / 2 - width / 2, top = screen.height / 2 - height / 2;
+            const width = 450, height = 730, left = 500, top = 200;
 
             window.addEventListener(
                 'message',
